@@ -1,0 +1,4 @@
+<select class="form-control" (change)="onItemChanged($event)">
+  <option [value]="null" selected>Choose {{ name }}</option>
+  <option *ngFor="let option of items" [value]="option[bindValue]" [selected]="selectedValue === option.value"> {{option[bindLabel]}}</option>
+</select>

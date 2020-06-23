@@ -1,0 +1,29 @@
+<div class="container">
+  <app-dropdown
+    [items]="regions"
+    [selectedValue]="selectedRegionName"
+    bindLabel="name"
+    bindValue="name"
+    name="Region"
+    (itemChanged)="loadCountries($event)"
+    class="dropdown"
+  ></app-dropdown>
+  <app-dropdown
+    *ngIf="countries"
+    [items]="countries"
+    [selectedValue]="selectedCountry"
+    bindLabel="name"
+    bindValue="name"
+    class="dropdown"
+    name="Country"
+    (itemChanged)="setSelectedCountry($event)"
+  ></app-dropdown>
+  <button
+    *ngIf="countries"
+    type="button"
+    class="btn btn-primary"
+    (click)="showCountryDetails()"
+  >
+    Load Country
+  </button>
+</div>
